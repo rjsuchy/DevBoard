@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Blogs
+  </title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<style>
+  .poppins-font {
+  font-family: "Poppins", sans-serif;
+}
+</style>
+ </head>
+
+ <body class="bg-blue-50 poppins-font max-w-7xl mx-auto p-4">
+    <!-- nav start  -->
+   <nav class="flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
+    <div class="flex items-center space-x-2">
+      <div class="">
+        <img alt="Logo" class="" height="30" src="assets/logo.png" width="30"/>
+      </div>
+      <h1 class="text-2xl font-light text-gray-800">Dev<span class="font-semibold">Board</span></h1>
+    </div>
+    <button class="bg-blue-600 text-white px-4 py-2 rounded-md">
+     <a href="index.html">Back to Desk</a>
+    </button>
+   </nav>
+   <!-- nav end  -->
+
+   <div class="mt-6 ">
+    <h1 class="text-2xl text-center font-semibold mb-4">
+     Blogs
+    </h1>
+    <div class="space-y-4">
+     <div class="p-4 border bg-white  rounded-lg">
+      <h2 class="font-semibold text-lg">
+       Question-1: What are the different ways to select an element in the DOM?
+      </h2>
+      <hr>
+      <p class="text-gray-600 mt-2">
+        We can use different methods to select elements in HTML. These methods include getElementById for selecting an element by its ID, getElementsByClassName for selecting elements by their class name, getElementsByTagName for selecting elements by their tag name, and querySelector or querySelectorAll for selecting elements using CSS selectors.
+      </p>
+     </div>
+
+     <div class="p-4 border bg-white  rounded-lg">
+      <h2 class="font-semibold text-lg">
+       Question-2: What is the difference between innerHTML, innerText, and textContent?
+      </h2>
+      <hr>
+      <p class="text-gray-600 mt-2">
+        innerHTML lets us see and change everything inside an element, including the HTML tags and how it looks. It’s like viewing the actual code for that section of the webpage. <br>
+        
+        innerText shows only the text that is visible to users on the screen. It ignores any hidden text and takes into account the styling, making it great for getting just the text that people can read. <br>
+        
+        textContent gives us all the text inside an element, even if some of it is hidden, but it doesn’t show any HTML tags or formatting. It’s like reading plain text, including parts that users can’t see.
+      </p>
+     </div>
+
+     <div class="p-4 border bg-white  rounded-lg">
+      <h2 class="font-semibold text-lg">
+       Question-3: How do you add an event listener in JavaScript?
+      </h2>
+      <hr>
+      <p class="text-gray-600 mt-2">
+        We can use addEventListener in JavaScript to respond to events. For instance, we can select a button with document.querySelector('button'). After selecting the button, we can add an event listener like this: button.addEventListener('click', () => alert('Clicked!'));. This means that when we click the button, the code inside the function will run, and an alert will pop up saying "Clicked!". This is an easy way for us to make our webpage interactive and engage users!
+
+
+      </p>
+     </div>
+
+     <div class="p-4 border bg-white  rounded-lg">
+      <h2 class="font-semibold text-lg">
+       Question-4: What is the purpose of the 'this' keyword in JavaScript?
+      </h2>
+      <hr>
+      <p class="text-gray-600 mt-2">
+        In JavaScript, "this" refers to the object that is currently running the code. The meaning of "this" can change depending on how we call a function. It helps us understand which object the methods and properties belong to. So, "this" is important for keeping track of the context in our code!
+      </p>
+     </div>
+
+     <div class="p-4 border bg-white  rounded-lg">
+      <h2 class="font-semibold text-lg">
+       Question-5: How do you create a promise in JavaScript?
+      </h2>
+      <hr>
+      <p class="text-gray-600 mt-2">
+        In JavaScript, we use the Promise constructor to handle async tasks. We pass a function with resolve and reject parameters. If the task succeeds, we call resolve(value); if it fails, we use reject(error). This makes async code cleaner and easier to manage!
+      </p>
+     </div>
+    </div>
+   </div>
+  
+ </body>
+</html>

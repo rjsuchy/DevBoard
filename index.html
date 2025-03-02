@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>DevBoard</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+  .poppins-font {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+</style>
+ 
+<body class="bg-blue-50 poppins-font mx-auto py-4 px-4 lg:px-[40px]">
+    <!-- nav -->
+    <nav class="flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
+      <div class="flex items-center space-x-2">
+        <div class="">
+          <img alt="Logo" class="" height="30" src="assets/logo.png" width="30"/>
+        </div>
+        <h1 class="text-2xl font-light text-gray-800">Dev<span class="font-semibold">Board</span></h1>
+      </div>
+      <div class="flex items-center space-x-4">
+
+        <div class="flex items-center gap-2 bg-[#F4F7FF] rounded-[24px] px-[20px] py-[10px]">
+          <img src="assets/checkbox.png" alt="" class="h-[24px] w-[24px]">
+          <span id="countTask" class="text-2xl font-bold text-gray-800">23</span>
+        </div>
+
+        <button class="bg-[#F4F7FF] p-2 rounded-full" onclick="changeBackgroundColor()">
+          <img src="assets/theme-btn.png" height="32px" width="32px" alt="">
+
+        </button>
+      </div>
+    </nav>
+    <!-- main  -->
+      <main class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-4 ">
+        <!--(Big Card) -->
+        <div class="col-span-3">
+          <div class="bg-white p-4 rounded-lg shadow-md">
+  
+            <!-- Task Assigned, Discover Something New, and Date -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+  
+              <!-- Task Assigned -->
+              <div class="bg-[#F4F7FF] p-4 lg:col-span-1 rounded-lg shadow-md">
+                <div class="flex items-center space-x-2">
+                  <div class="bg-white m-2 p-2 rounded-full">
+                  <img src="assets/checkbox.png" height="24px" width="24px" alt="">  
+                  </div>
+                  <div class="flex flex-col ">
+                    <span class="text-md font-semibold text-gray-800">Task Assigned</span>
+                  <span id="assignedTask" class="text-[28px] font-bold text-slate-900">6</span>
+                  </div>
+                </div>
+              </div>
+  
+               <!-- Discover Something New -->
+              <div class="bg-gradient-to-r lg:col-span-2 from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8] p-2  rounded-lg flex items-center space-x-2">
+                <img src="assets/board.png" width="63.1px" height="71.1px" alt="">
+                <span class="text-lg font-medium text-white"><a href="blog.html">Discover Something New Today!</a></span>
+              </div>
+  
+              <!-- Date  -->
+              <div class="bg-[#F4F7FF] lg:col-span-1 p-4 rounded-lg flex items-center space-x-2">
+                <div class="rounded-full bg-white p-2 ">
+                  <img src="assets/calender.png" height="24px" width="24px" alt="" >
+                </div> 
+                <span id="current-date" class="text-lg text- font-semibold text-gray-800"></span>
+              </div>
+            </div>
+  
+            <!-- Task Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+  
+  
+              <!-- Task Card 1-->
+              <div class="bg-[#F4F7FF] p-4 rounded-lg shadow-md">
+                <div class="flex justify-between items-center">
+                  <span class="text-base font-normal text-gray-500 py-[8px] px-[16px] bg-white rounded-[8px]">ShopEase</span>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-800 mt-2">Fix Mobile Button Issue</h2>
+                <p class="text-gray-600 mt-2 p-[16px] bg-white rounded-[8px]">Debug using Chrome DevTools, check for overlapping ...</p>
+                <div class="flex justify-between items-center mt-4">
+                  <div class="flex flex-col">
+                    <span class="text-sm text-gray-500">Deadline</span>
+                    <span class="text-sm text-gray-800">21 March 2025</span>
+                  </div>
+                  <span class="text-sm font-bold text-white bg-blue-500 px-2 py-1 rounded cursor-pointer" onclick="logCompletion(this, 'Fix Mobile Button Issue')">Completed</span>
+                </div>
+              </div>
+              
+  
+              <!-- Task Card 2-->
+              <div class="bg-[#F4F7FF] p-4 rounded-lg shadow-md">
+                <div class="flex justify-between items-center">
+                  <span class="text-base font-normal text-gray-500 py-[8px] px-[16px] bg-white rounded-[8px]">CloudSync</span>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-800 mt-2">Add Dark Mode</h2>
+                <p class="text-gray-600 mt-2 p-[16px] bg-white rounded-[8px]">Store the user's preference in localStorage, update CSS ...</p>
+                <div class="flex justify-between items-center mt-4">
+                  <div class="flex flex-col">
+                    <span class="text-sm text-gray-500">Deadline</span>
+                    <span class="text-sm text-gray-800">21 March 2025</span>
+                  </div>
+                  <span class="text-sm font-bold text-white bg-blue-500 px-2 py-1 rounded cursor-pointer" onclick="logCompletion(this, 'Add Dark Mode')">Completed</span>
+                </div>
+              </div>
+  
+  
+              <!-- Task Card 3-->
+              <div class="bg-[#F4F7FF] p-4 rounded-lg shadow-md">
+                <div class="flex justify-between items-center">
+                  <span class="text-base font-normal text-gray-500 py-[8px] px-[16px] bg-white rounded-[8px]">SwiftPay</span>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-800 mt-2">Optimize Home page</h2>
+                <p class="text-gray-600 mt-2 p-[16px] bg-white rounded-[8px]">Debug using Chrome DevTools, check for overlapping ...</p>
+                <div class="flex justify-between items-center mt-4">
+                  <div class="flex flex-col">
+                    <span class="text-sm text-gray-500">Deadline</span>
+                    <span class="text-sm text-gray-800">21 March 2025</span>
+                  </div>
+                  <span class="text-sm font-bold text-white bg-blue-500 px-2 py-1 rounded cursor-pointer" onclick="logCompletion(this, 'Optimize Home page')">Completed</span>
+                </div>
+              </div>
+  
+  
+              <!-- Task Card 4-->
+              <div class="bg-[#F4F7FF] p-4 rounded-lg shadow-md">
+                <div class="flex justify-between items-center">
+                  <span class="text-base font-normal text-gray-500 py-[8px] px-[16px] bg-white rounded-[8px]">Meta</span>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-800 mt-2">Add new emoji </h2>
+                <p class="text-gray-600 mt-2 p-[16px] bg-white rounded-[8px]">Debug using Chrome DevTools, check for overlapping ...</p>
+                <div class="flex justify-between items-center mt-4">
+                  <div class="flex flex-col">
+                    <span class="text-sm text-gray-500">Deadline</span>
+                    <span class="text-sm text-gray-800">21 March 2025</span>
+                  </div>
+                  <span class="text-sm font-bold text-white bg-blue-500 px-2 py-1 rounded cursor-pointer" onclick="logCompletion(this, 'Add new emoji')">Completed</span>
+                </div>
+              </div>
+  
+  
+              <!-- Task Card 5-->
+              <div class="bg-[#F4F7FF] p-4 rounded-lg shadow-md">
+                <div class="flex justify-between items-center">
+                  <span class="text-base font-normal text-gray-500 py-[8px] px-[16px] bg-white rounded-[8px]">Google LLC</span>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-800 mt-2">Integrate OpenAI API</h2>
+                <p class="text-gray-600 mt-2 p-[16px] bg-white rounded-[8px]">Debug using Chrome DevTools, check for overlapping ...</p>
+                <div class="flex justify-between items-center mt-4">
+                  <div class="flex flex-col">
+                    <span class="text-sm text-gray-500">Deadline</span>
+                    <span class="text-sm text-gray-800">21 March 2025</span>
+                  </div>
+                  <span class="text-sm font-bold text-white bg-blue-500 px-2 py-1 rounded cursor-pointer" onclick="logCompletion(this, 'Integrate OpenAI API')">Completed</span>
+                </div>
+              </div>
+  
+  
+              <!-- Task Card 6-->
+              <div class="bg-[#F4F7FF] p-4 rounded-lg shadow-md">
+                <div class="flex justify-between items-center">
+                  <span class="text-base font-normal text-gray-500 py-[8px] px-[16px] bg-white rounded-[8px]">Glassdoor</span>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-800 mt-2">Improve Job searching</h2>
+                <p class="text-gray-600 mt-2 p-[16px] bg-white rounded-[8px]">Debug using Chrome DevTools, check for overlapping ...</p>
+                <div class="flex justify-between items-center mt-4">
+                  <div class="flex flex-col">
+                    <span class="text-sm text-gray-500">Deadline</span>
+                    <span class="text-sm text-gray-800">21 March 2025</span>
+                  </div>
+                  <span class="text-sm font-bold text-white bg-blue-500 px-2 py-1 rounded cursor-pointer" onclick="logCompletion(this, 'Improve Job searching')">Completed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+        <!-- Right Column (Activity Log) -->
+        <div class="bg-white p-4 rounded-lg shadow-md">
+          <div class="flex flex-col justify-between items-center gap-5">
+            <div class="flex gap-2">
+              <img src="assets/activity.png" alt="">
+            <span class="text-lg font-semibold text-gray-800">Activity Log</span>
+            </div>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg" onclick="clearHistory()">Clear History</button>
+          </div>
+          <div id="activityLog" class="mt-4 space-y-2">
+            <!-- Activity log is empty by default -->
+          </div>
+        </div>
+      </main>
+    
+    
+  
+  <script src="Scripts/script.js"></script>
+</body>
+</html>
+
+
+
